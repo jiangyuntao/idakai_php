@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>大开网</title>
+<link media="all" rel="stylesheet" href="/assets/css/bootstrap.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+<!--[if gte IE 6]>
+    <link href="ie6.min.css" rel="stylesheet">
+<![endif]-->
+<script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){if($.browser.msie&&parseInt($.browser.version,10)===6){$('.row div[class^="span"]:last-child').addClass("last-child");$('[class*="span"]').addClass("margin-left-20");$(':button[class="btn"], :reset[class="btn"], :submit[class="btn"], input[type="button"]').addClass("button-reset");$(":checkbox").addClass("input-checkbox");$('[class^="icon-"], [class*=" icon-"]').addClass("icon-sprite");$(".pagination li:first-child a").addClass("pagination-first-child")}})
+$(function() {
+    $('#username').focus();
+});
+</script>
+</head>
+<body>
+  <include file="Public:header" />
+  <div class="container container-top50">
+    <div class="row-fluid">
+      <div class="span9">
+        <div class="box">
+          <h3 class="subtitle">新用户注册</h3>
+          <br />
+          <form class="form-horizontal" method="POST" action="">
+            <div class="control-group">
+              <label class="control-label" for="username">用户名：</label>
+              <div class="controls">
+                <input type="text" id="username" placeholder="您在网站的标识，可用来登录">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="password">密码：</label>
+              <div class="controls">
+                <input type="password" id="password" placeholder="密码最好在6位以上">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="password-repeat">密码确认：</label>
+              <div class="controls">
+                <input type="password_repeat" id="password-repeat" placeholder="再输入一次您的密码">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="email">邮箱：</label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="可用来登录。建议填写常用邮箱，比如 @qq.com">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="catpcha">验证码：</label>
+              <div class="controls">
+                <input type="text" id="catpcha" class="input-small" placeholder="不区分大小写">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox"> 同意用户协议
+                </label>
+                <button type="submit" class="btn btn-success">注册成为会员</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="span3">
+        <div class="box">
+          <h6>已经有帐号？请直接登录</h6>
+          <a class="btn btn-success" href="__APP__/signin">登录</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+  <div class="container">
+    <p class="pull-left">&copy; 2012 <a href="htp://idakai.com/">idakai.com</a>. all rights reserved.</p>
+    <p class="pull-right">
+    <a href="__APP__/about" target="_blank">关于我们</a>
+    &nbsp;
+    <a href="__APP__/disclaimer" target="_blank">免责声明</a>
+    </p>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <?php
 class IndexAction extends Action {
     public function index() {
-        echo 'in home';
+        $this->display();
     }
 
     public function foo() {
