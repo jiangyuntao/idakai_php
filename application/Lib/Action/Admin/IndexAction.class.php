@@ -1,10 +1,10 @@
 <?php
 class IndexAction extends Action {
     public function index() {
-        echo 'in home';
+        echo 'in admin';
     }
 
     public function foo() {
-        echo 'foo';
+        echo 'admin foo';
     }
 }
