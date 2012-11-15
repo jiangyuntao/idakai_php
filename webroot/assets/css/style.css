@@ -1,5 +1,5 @@
 body { background: #FAFAFA url("../img/bg.gif") repeat; }
-.container-top50 { margin-top: 50px; }
+.navbar .brand { margin: 0; padding: 0 }
 .box { 
   min-height: 20px;
   padding: 19px;
@@ -28,7 +28,8 @@ a.green { color: #51A351; }
   .post-list li { line-height: 27px; }
 .index-group-member { margin-top: 5px; }
 .index-group-member span.label{ font-size: 12px; }
-.index-group-leader-title { margin-top: 8px; }
+.index-group-leader { margin-bottom: 8px; }
+.index-group-leader-title { /*margin-top: 8px;*/ }
 .index-group-leader-title span.label { font-size: 12px; }
 .index-group-leader-desc { margin-top: 5px; width: 200px; font-size: 12px; line-height: 25px; }
 .form { margin: 0; }
