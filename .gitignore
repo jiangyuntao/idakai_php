@@ -1,4 +1,8 @@
-application/Runtime/*.*
+application/Runtime/~runtime.php
+application/Runtime/Cache
+application/Runtime/Data
+application/Runtime/Logs
+application/Runtime/Temp
 *.tmp
 *.bak
 *.swp
