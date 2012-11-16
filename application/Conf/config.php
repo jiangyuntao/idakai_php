@@ -8,6 +8,7 @@ return array(
     'URL_ROUTE_RULES' => array(
         'signup' => 'User/signup',
         'signin' => 'User/signin',
+        'captcha' => 'User/captcha',
         'about' => array('Page/show', 'slug=about'),
         'disclaimer' => array('Page/show', 'slug=disclaimer'),
     ),

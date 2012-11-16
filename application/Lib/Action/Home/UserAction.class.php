@@ -10,4 +10,9 @@ class UserAction extends Action {
     public function signin() {
         $this->display();
     }
+
+    public function captcha() {
+        import('ORG.Util.Image');
+        Image::buildImageVerify();
+    }
 }
