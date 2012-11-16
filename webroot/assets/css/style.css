@@ -1,3 +1,4 @@
+html { overflow-y: scroll; }
 body { background: #FAFAFA url("../img/bg.gif") repeat; }
 .navbar .brand { margin: 0; padding: 0 }
 .box { 
