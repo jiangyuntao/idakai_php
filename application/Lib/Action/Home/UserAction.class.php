@@ -1,9 +1,13 @@
 <?php
-class UserAction extends Action {
+class UserAction extends AppAction {
     public function index() {
     }
 
     public function signup() {
+        if ($this->isPost()) {
+            dump($_POST);
+            exit;
+        }
         $this->display();
     }
 
