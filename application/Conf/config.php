@@ -12,4 +12,5 @@ return array(
         'about' => array('Page/show', 'slug=about'),
         'disclaimer' => array('Page/show', 'slug=disclaimer'),
     ),
+    'TMPL_CACHE_ON' => false,
 );

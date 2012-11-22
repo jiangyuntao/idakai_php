@@ -1,10 +1,18 @@
 html { overflow-y: scroll; }
-body { background: #FFF url("../img/sbg.png") repeat; }
+body { background: #FFF url("../img/sbg.png") repeat; font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;; }
+.navbar-inner { min-height: 50px; }
 .navbar .brand { margin: 0; padding: 0 }
+.navbar .pull-right, .navbar .nav { height: 50px; }
+.navbar .btn { margin-top: 12px; }
+.navbar .nav li { line-height: 30px; }
+
+.sidebar-signin-label { margin-right: 10px; width: 80px; cursor: pointer; float: left; line-height: 30px; text-align: right; }
+.box-title { margin-left: 2px; padding-left: 8px; height: 17px; line-height: 17px; border-left: 3px solid #5C9012; color: #5C9012; font-size: 16px; }
+.box-title a { float: right; color: #666; font-size: 12px; font-weight: normal; }
 .box { 
   min-height: 20px;
   padding: 19px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid #E3E3E3;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -21,8 +29,8 @@ body { background: #FFF url("../img/sbg.png") repeat; }
 }
 a.green { color: #51A351; }
 .subtitle { margin: 0 0 10px 0; color: #666; }
-.wrapper50 { margin: 10px 0; padding-bottom: 20px; float: left; width: 50%; border-bottom: 1px dotted #E3E3E3; }
-.wrapper25 { margin: 10px 0; padding-bottom: 20px; float: left; width: 25%; border-bottom: 1px dotted #E3E3E3; }
+.wrapper50 { margin: 10px 0; padding-bottom: 20px; float: left; width: 50%; border-bottom: 1px dashed #E2E2E2; }
+.wrapper25 { margin: 10px 0; padding-bottom: 20px; float: left; width: 25%; border-bottom: 1px dashed #E2E2E2; }
 .left { float: left; margin-right: 10px; overflow: hidden; }
 .center { text-align: center; }
 .post-list { margin: 0; padding: 0; list-style: none; }
