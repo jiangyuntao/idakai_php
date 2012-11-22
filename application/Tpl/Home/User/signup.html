@@ -18,32 +18,32 @@
             <div class="control-group">
               <label class="control-label" for="username">用户名：</label>
               <div class="controls">
-                <input type="text" id="username" placeholder="您在网站的标识，可用来登录">
+                <input type="text" id="username" name="username" placeholder="您在网站的标识，可用来登录">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="password">密码：</label>
               <div class="controls">
-                <input type="password" id="password" placeholder="密码必须在6位以上">
+                <input type="password" id="password" name="password" placeholder="密码必须在6位以上">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="email">邮箱：</label>
               <div class="controls">
-                <input type="text" id="email" placeholder="常用邮箱，如 @qq.com">
+                <input type="text" id="email" name="email" placeholder="常用邮箱，如 @qq.com">
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label" for="catpcha">验证码：</label>
+              <label class="control-label" for="captcha">验证码：</label>
               <div class="controls">
-                <input type="text" id="catpcha" class="input-small">
+                <input type="text" id="captcha" class="input-small" name="captcha">
                 &nbsp;
-                <a href="javascript:;" title="点击刷新" id="refresh_captcha"><img id="captcha" src="__APP__/captcha" /></a>
+                <a href="javascript:;" title="看不清？换一张！" id="refresh_captcha"><img id="captcha" src="__APP__/captcha" /></a>
               </div>
             </div>
             <div class="control-group">
               <div class="controls">
-                <button type="submit" class="btn btn-success">注册成为会员</button>
+                <input type="submit" class="btn btn-success" value="注册成为会员" />
               </div>
             </div>
           </form>
