@@ -1,5 +1,5 @@
 html { overflow-y: scroll; }
-body { background: #FAFAFA url("../img/bg.gif") repeat; }
+body { background: #FFF url("../img/sbg.png") repeat; }
 .navbar .brand { margin: 0; padding: 0 }
 .box { 
   min-height: 20px;
