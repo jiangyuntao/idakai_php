@@ -1,14 +1,19 @@
 html { overflow-y: scroll; }
 body { background: #FFF url("../img/sbg.png") repeat; font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;; }
+
+.clearfix { clear: both; }
+.center { text-align: center; }
+
 .navbar-inner { min-height: 50px; }
 .navbar .brand { margin: 0; padding: 0 }
 .navbar .pull-right, .navbar .nav { height: 50px; }
 .navbar .btn { margin-top: 12px; }
 .navbar .nav li { line-height: 30px; }
 
-.sidebar-signin-label { margin-right: 10px; width: 80px; cursor: pointer; float: left; line-height: 30px; text-align: right; }
+.sidebar-signin-label { margin-right: 10px; width: 80px; cursor: pointer; float: left; line-height: 30px; text-align: left; }
+
 .box-title { margin-left: 2px; padding-left: 8px; height: 17px; line-height: 17px; border-left: 3px solid #5C9012; color: #5C9012; font-size: 16px; }
-.box-title a { float: right; color: #666; font-size: 12px; font-weight: normal; }
+  .box-title a { float: right; color: #666; font-size: 12px; font-weight: normal; }
 .box { 
   min-height: 20px;
   padding: 19px;
@@ -27,14 +32,24 @@ body { background: #FFF url("../img/sbg.png") repeat; font-family: "微软雅黑
 .box-noborder {
   background: #FFF;
 }
+.sth { margin-left: 10px; color: #999; font-size: 12px; }
 a.green { color: #51A351; }
+
+ul.group-leader { margin: 0; padding: 0; list-style: none; }
+ul.group-leader li { margin: 0 0 20px 0; padding: 0 0 20px 0; border-bottom: 1px dashed #E2E2E2; overflow: hidden; }
+ul.group-leader li.end { margin: 0; padding: 0; border: none; }
+ul.group-leader li div { margin-right: 59px; float: left; text-align: center; line-height: 25px; }
+ul.group-leader li div.right { margin-right: 0px; float: right; }
+
+
 .subtitle { margin: 0 0 10px 0; color: #666; }
 .wrapper50 { margin: 10px 0; padding-bottom: 20px; float: left; width: 50%; border-bottom: 1px dashed #E2E2E2; }
 .wrapper25 { margin: 10px 0; padding-bottom: 20px; float: left; width: 25%; border-bottom: 1px dashed #E2E2E2; }
 .left { float: left; margin-right: 10px; overflow: hidden; }
-.center { text-align: center; }
+
 .post-list { margin: 0; padding: 0; list-style: none; }
-  .post-list li { line-height: 27px; }
+  .post-list li { padding-bottom: 11px; }
+
 .index-group-member { margin-top: 5px; }
 .index-group-member span.label{ font-size: 12px; }
 .index-group-leader { margin-bottom: 8px; }

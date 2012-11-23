@@ -1,20 +1,24 @@
           <form class="form" method="POST" action="__APP__/signin">
             <p>
-              <label class="sidebar-signin-label">用户名/邮箱</label>
-              <input type="text" class="input-medium" placeholder="帐号">
+              <label for="username" class="sidebar-signin-label">用户名/邮箱</label>
+              <input type="text" id="username" class="input-medium" name="username" tabindex="1">
             </p>
             <p>
-              <label class="sidebar-signin-label">密码</label>
-              <input type="password" class="input-medium" placeholder="密码">
+              <label for="password" class="sidebar-signin-label">用户密码</label>
+              <input type="password" id="password" class="input-medium" name="password" tabindex="2">
             </p>
             <p>
-              <label class="checkbox">
-                <input type="checkbox" name="remember" checked="checked"> 记住登录
-              </label>
-              <a href="__APP__/getpassword">忘记密码?</a>
+              <div class="pull-left">
+                <label class="checkbox">
+                  <input type="checkbox" name="remember" checked="checked" tabindex="3"> 记住登录
+                </label>
+              </div>
+              <div class="span1"></div>
+              <div class="pull-left">
+                <a href="__APP__/getpassword">忘记密码?</a>
+              </div>
             </p>
-            <p class="center">
-            <input type="submit" class="btn btn-success" value="登录" />
-            &nbsp;
+            <p class="clearfix center">
+              <input type="submit" class="btn btn-success" value="  登录  " tabindex="4" />
             </p>
           </form>
