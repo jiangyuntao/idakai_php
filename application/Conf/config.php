@@ -13,4 +13,10 @@ return array(
         'disclaimer' => array('Page/show', 'slug=disclaimer'),
     ),
     'TMPL_CACHE_ON' => false,
+    'SALT' => '"H<Q{CMD?s,{',
+    'DB_TYPE' => 'pdo',
+    'DB_PREFIX' => '',
+    'DB_USER' => 'root',
+    'DB_PWD' => '',
+    'DB_DSN' => 'mysql:host=localhost;dbname=idakai;charset=utf-8',
 );
