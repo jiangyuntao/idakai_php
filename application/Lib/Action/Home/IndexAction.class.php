@@ -1,10 +1,6 @@
 <?php
-class IndexAction extends Action {
+class IndexAction extends AppAction {
     public function index() {
         $this->display();
-    }
-
-    public function foo() {
-        echo 'foo';
     }
 }

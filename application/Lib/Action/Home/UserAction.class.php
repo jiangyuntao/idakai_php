@@ -1,72 +1,133 @@
 <?php
 class UserAction extends AppAction {
+    /**
+     * 用户中心
+     *
+     * @access public
+     * @return void
+     */
     public function index() {
+        $this->display();
     }
 
+    /**
+     * 注册
+     *
+     * @access public
+     * @return void
+     */
     public function signup() {
         if ($this->isPost()) {
-            $user = D('User');
-            $user->password = $user->encryptPassword($_POST['password']);
-            if ($user->create() && $user->add()) {
-                // @todo 成功后自动登录
-                // @todo 成功后跳转到上传头像, UserAction::signup_finish()
-            } else {
-                // @todo 跳转到错误页
+            if ($_SESSION['verify'] != md5($_POST['captcha'])) {
+                $this->error('验证码输入错误');
             }
-            return;
+
+            $user = D('User');
+            $_POST['password'] = $user->encryptPassword($_POST['password']);
+
+            if ($user->create() && $id = $user->add()) {
+                // 注册成功后自动登录
+                $this->_setAuthCookie(array(
+                    'id' => $id,
+                    'username' => $_POST['username'],
+                ));
+
+                // 成功后跳转到上传头像, UserAction::signup_finish()
+                $this->redirect('/signupfinish');
+            } else {
+                // 跳转到错误页
+                $this->error('注册失败，再来再来');
+            }
         }
         $this->display();
     }
 
+    /**
+     * 注册完成。处理头像吧
+     *
+     * @access public
+     * @return void
+     */
     public function signupFinish() {
-        echo 'foo';
+        echo 'fuck me';
         $this->display();
     }
 
+    /**
+     * 登录
+     *
+     * @access public
+     * @return void
+     */
     public function signin() {
         if ($this->isPost()) {
             $user = D('User');
 
-            if (strpos($_POST['username'], '@')) {
-                $condition = "email='{$_POST['username']}'";
-            } else {
-                $condition = "username='{$_POST['username']}'";
+            switch ($user->signin($this->_post('username'), $this->_post('password'))) {
+                case -1:
+                break;
+                case -2:
+                break;
+                default:
+                    $this->_setAuthCookie(array(
+                        'id' => $entry->id,
+                        'username' => $entry->username,
+                        'avatar' => $entry->avatar,
+                    ));
+                    $this->redirect('/');
             }
-
-            if (!$entry = $user->where($condition)->find()) {
-                // @todo 帐号不存在
-            }
-
-            if ($entry->password != $user->encryptPassword($_POST['password'])) {
-                // @todo 密码错误
-            }
-
-            $auth = array(
-                'id' => $entry->id,
-                'username' => $entry->username,
-                'avatar' => $entry->avatar,
-            );
-
-            if ($_POST['remember']) {
-                Cookie::set();
-            } else {
-                Cookie::set();
-            }
-
-            return;
         }
 
         $this->display();
     }
 
-    public function signout() {
+    protected function _setAuthCookie($auth = array(), $remember = true) {
+        if ($_POST['remember']) {
+            // Cookie 记住10年
+            Cookie::set('auth', Crypt::encrypt(serialize($auth), C('crypt_key'), true), 315576000);
+        } else {
+            Cookie::set('auth', Crypt::encrypt(serialize($auth), C('crypt_key'), true));
+        }
     }
 
+    /**
+     * 退出登录
+     *
+     * @access public
+     * @return void
+     */
+    public function signout() {
+        Cookie::delete('auth');
+        $this->redirect('/signin');
+    }
+
+    /**
+     * 显示验证码
+     *
+     * @access public
+     * @return void
+     */
     public function captcha() {
         import('ORG.Util.Image');
         Image::buildImageVerify();
     }
 
-    public function avatar_upload() {
+    /**
+     * 用户中心显示头像上传的页面
+     *
+     * @access public
+     * @return void
+     */
+    public function avatar() {
+        $this->display();
+    }
+
+    /**
+     * 上传头像的处理方法
+     *
+     * @access public
+     * @return void
+     */
+    public function avatarUpload() {
     }
 }
