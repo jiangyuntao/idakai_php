@@ -12,9 +12,17 @@
         </ul>
 
         <div class="pull-right">
+          <if condition="is_array($auth)">
+          <a href="__APP__/">{$auth.username}</a>
+          &nbsp;
+          <a href="__APP__/square">修改资料</a>
+          &nbsp;
+          <a href="__APP__/user/signout">退出登录</a>
+          <else />
           <a class="btn btn-small" href="__APP__/signin"><i class="icon-lock"></i> 登录</a>
           &nbsp;
           <a class="btn btn-small" href="__APP__/signup"><i class="icon-user"></i> 轻松注册</a>
+          </if>
         </div>
       </div>
     </div>

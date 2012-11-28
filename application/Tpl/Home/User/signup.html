@@ -38,7 +38,7 @@
               <div class="controls">
                 <input type="text" id="captcha" class="input-small" name="captcha">
                 &nbsp;
-                <a href="javascript:;" title="看不清？换一张！" id="refresh_captcha"><img id="captcha" src="__APP__/captcha" /></a>
+                <a href="javascript:;" title="看不清？换一张！" id="refresh_captcha"><img id="captcha_image" src="__APP__/captcha" /></a>
               </div>
             </div>
             <div class="control-group">
@@ -76,14 +76,32 @@
 $(function() {
     $('#username').focus();
     $('#refresh_captcha').click(function() {
-        $('#captcha').attr('src', '__APP__/captcha?r=' + Math.random());
+        $('#captcha_image').attr('src', '__APP__/captcha/' + Math.random());
     });
     $('#signup-form').validate({
         rules: {
-            username: "required"
+            username: "required",
+            password: {
+                required: true,
+                minlength: 6
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            captcha: "required"
         },
         messages: {
-            username: "请输入用户名"
+            username: "请输入用户名",
+            password: {
+                required: "请输入密码",
+                minlength: "请输入至少6位密码"
+            },
+            email: {
+                required: "请输入邮箱",
+                email: "请输入正确的邮箱"
+            },
+            captcha: "请输入验证码"
         }
     });
 });

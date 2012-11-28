@@ -9,8 +9,9 @@ body { background: #F8F8F8; font-family: "微软雅黑", "Helvetica Neue", Helve
 .left { float: left; margin-right: 10px; overflow: hidden; }
 .sth { margin-left: 10px; color: #999; font-size: 12px; }
 a.green { color: #51A351; }
+label.error { margin-left: 10px; display: inline; color: #D70002; }
 
-.navbar-inner { min-height: 50px; }
+.navbar-inner { min-height: 50px; line-height: 40px; }
 .navbar .brand { margin: 0; padding: 0 }
 .navbar .pull-right, .navbar .nav { height: 50px; }
 .navbar .btn { margin-top: 12px; }

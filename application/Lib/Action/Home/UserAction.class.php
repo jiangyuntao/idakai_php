@@ -63,16 +63,16 @@ class UserAction extends AppAction {
         if ($this->isPost()) {
             $user = D('User');
 
-            switch ($user->signin($this->_post('username'), $this->_post('password'))) {
+            switch ($user = $user->signin($this->_post('username'), $this->_post('password'))) {
                 case -1:
                 break;
                 case -2:
                 break;
                 default:
                     $this->_setAuthCookie(array(
-                        'id' => $entry->id,
-                        'username' => $entry->username,
-                        'avatar' => $entry->avatar,
+                        'id' => $user['id'],
+                        'username' => $user['username'],
+                        'avatar' => $user['avatar'],
                     ));
                     $this->redirect('/');
             }
@@ -82,11 +82,13 @@ class UserAction extends AppAction {
     }
 
     protected function _setAuthCookie($auth = array(), $remember = true) {
-        if ($_POST['remember']) {
+        $auth = Crypt::encrypt(serialize($auth), C('SALT'), true);
+
+        if ($remember) {
             // Cookie 记住10年
-            Cookie::set('auth', Crypt::encrypt(serialize($auth), C('crypt_key'), true), 315576000);
+            Cookie::set('auth', $auth, 315576000);
         } else {
-            Cookie::set('auth', Crypt::encrypt(serialize($auth), C('crypt_key'), true));
+            Cookie::set('auth', $auth);
         }
     }
 
@@ -98,7 +100,7 @@ class UserAction extends AppAction {
      */
     public function signout() {
         Cookie::delete('auth');
-        $this->redirect('/signin');
+        $this->redirect('signin');
     }
 
     /**
