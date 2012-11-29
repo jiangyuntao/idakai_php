@@ -18,6 +18,9 @@ class AppAction extends Action {
 
         // 获取用户登录信息
         $this->data['auth'] = unserialize(Crypt::decrypt(COOKIE::get('auth'), C('SALT'), true));
+        if (isset($this->data['auth']['id'], $this->data['auth']['username'])) {
+            $this->data['logged_in'] = true;
+        }
     }
 
     protected function jsonReturn($data = null) {

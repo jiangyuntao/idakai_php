@@ -33,12 +33,13 @@ class UserAction extends AppAction {
                 ));
 
                 // 成功后跳转到上传头像, UserAction::signup_finish()
-                $this->redirect('/signupfinish');
+                $this->redirect('/signup_finish');
             } else {
                 // 跳转到错误页
                 $this->error('注册失败，再来再来');
             }
         }
+
         $this->display();
     }
 
@@ -74,7 +75,7 @@ class UserAction extends AppAction {
                         'username' => $user['username'],
                         'avatar' => $user['avatar'],
                     ));
-                    $this->redirect('/');
+                    $this->redirect('/square');
             }
         }
 
@@ -100,7 +101,7 @@ class UserAction extends AppAction {
      */
     public function signout() {
         Cookie::delete('auth');
-        $this->redirect('signin');
+        $this->redirect('/signin');
     }
 
     /**

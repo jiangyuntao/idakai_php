@@ -2,28 +2,31 @@
     <div class="navbar-inner">
       <div class="container">
 
-        <a href="__APP__/" class="brand" title="大开网"><img src="/assets/img/logo.png" alt="大开网" /></a>
+        <a href="__APP__/<if condition="$logged_in">home<else />square</if>" class="brand" title="大开网"><img src="/assets/img/logo.png" alt="大开网" /></a>
 
         <ul class="nav">
-          <li><a href="__APP__/">首页</a></li>
+          <if condition="$logged_in">
+          <li><a href="__APP__/home" title="最新帖子">我的首页</a></li>
+          </if>
           <li><a href="__APP__/square" title="最新帖子">广场</a></li>
           <li><a href="__APP__/group" title="小组列表">小组</a></li>
           <li><a href="__APP__/search" title="搜索">搜索</a></li>
         </ul>
 
+        <if condition="$logged_in">
+        <ul class="nav user pull-right">
+          <li class="link"><a href="__APP__/home">{$auth.username}</a></li>
+          <li class="link"><a href="__APP__/profile">修改资料</a></li>
+          <li class="link"><a href="__APP__/signout">退出登录</a></li>
+        </ul>
+        <else />
         <div class="pull-right">
-          <if condition="is_array($auth)">
-          <a href="__APP__/">{$auth.username}</a>
-          &nbsp;
-          <a href="__APP__/square">修改资料</a>
-          &nbsp;
-          <a href="__APP__/user/signout">退出登录</a>
-          <else />
           <a class="btn btn-small" href="__APP__/signin"><i class="icon-lock"></i> 登录</a>
-          &nbsp;
+          &nbsp;&nbsp;
           <a class="btn btn-small" href="__APP__/signup"><i class="icon-user"></i> 轻松注册</a>
-          </if>
         </div>
+        </if>
+
       </div>
     </div>
   </div>

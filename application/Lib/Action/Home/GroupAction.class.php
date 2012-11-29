@@ -1,6 +1,7 @@
 <?php
-class GroupAction extends Action {
+class GroupAction extends AppAction {
     public function index() {
+        $this->assign($this->data);
         $this->display();
     }
 }
