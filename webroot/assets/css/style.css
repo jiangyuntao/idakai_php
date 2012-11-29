@@ -18,6 +18,7 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
 .navbar .nav li { line-height: 30px; }
 .navbar .user { margin: 0; font-size: 12px; }
 .navbar .user li a { padding: 10px 0px 10px 20px; }
+.navbar .user li a.username { padding: 10px 0px 10px 10px; }
 
 .sidebar-signin-label { margin-right: 10px; width: 80px; cursor: pointer; float: left; line-height: 30px; text-align: left; }
 
