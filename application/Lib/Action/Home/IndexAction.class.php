@@ -4,4 +4,9 @@ class IndexAction extends AppAction {
         $this->assign($this->data);
         $this->display();
     }
+
+    public function home() {
+        $this->assign($this->data);
+        $this->display();
+    }
 }

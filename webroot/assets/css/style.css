@@ -47,6 +47,9 @@ ul.sidebar-topic { margin: 0; padding: 0; list-style: none; }
 ul.sidebar-topic li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #E2E2E2; }
 ul.sidebar-topic li.end { margin: 0; padding: 0; border: none; }
 
+.user-info ul { margin: 0; padding: 0; list-style: none; overflow: hidden; }
+.user-info ul li { overflow: hidden; }
+
 .post-list { margin: 0; padding: 0; list-style: none; }
   .post-list li { padding-bottom: 11px; }
 
