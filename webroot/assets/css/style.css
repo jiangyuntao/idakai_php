@@ -19,6 +19,7 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
 .navbar .user { margin: 0; font-size: 12px; }
 .navbar .user li a { padding: 10px 0px 10px 20px; }
 .navbar .user li a.username { padding: 10px 0px 10px 10px; }
+.navbar .user li a img { margin-top: 5px\9; }
 
 .sidebar-signin-label { margin-right: 10px; width: 80px; cursor: pointer; float: left; line-height: 30px; text-align: left; }
 
@@ -30,7 +31,7 @@ ul.group-leader li { margin: 0 0 20px 0; padding: 0 0 20px 0; border-bottom: 1px
 ul.group-leader li.end { margin: 0; padding: 0; border: none; }
 ul.group-leader li div { margin-right: 71px; float: left; text-align: center; line-height: 25px; }
 ul.group-leader li div.right { margin-right: 0px; float: right; }
-ul.group-leader img { width: 80px; height: 80px; }
+ul.group-leader img { width: 70px; height: 70px; }
 
 ul.group { margin: 0; padding: 0; list-style: none; }
 ul.group li { margin: 0 0 20px 0; padding: 0 0 10px 0; border-bottom: 1px dashed #E2E2E2; overflow: hidden; }
@@ -41,14 +42,21 @@ ul.group li div p.group-avatar { float: left; width: 80px; text-align: center; }
 ul.group li div p.group-avatar img { margin-bottom: 5px; }
 ul.group li div p.group-desc { margin: -7px 0 0 90px; float: left: width: 170px; }
 ul.group li div p.group-desc .desc { font-size: 12px; color: #666; }
-ul.group img { width: 80px; height: 80px; }
+ul.group img { width: 70px; height: 70px; }
 
 ul.sidebar-topic { margin: 0; padding: 0; list-style: none; }
 ul.sidebar-topic li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #E2E2E2; }
 ul.sidebar-topic li.end { margin: 0; padding: 0; border: none; }
 
+.user-info h5 { margin: 0 0 12px 0; }
+.user-info h5 span { margin-left: 20px; font-size: 12px; font-weight: normal; }
 .user-info ul { margin: 0; padding: 0; list-style: none; overflow: hidden; }
-.user-info ul li { overflow: hidden; }
+.user-info ul li { width: 89px; float: left; overflow: hidden; font-size: 12px; }
+
+ul.my-group { margin: 0; padding: 0; list-style: none; }
+ul.my-group li { clear: both; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #E2E2E2; }
+ul.my-group li.end { margin: 0; padding: 0; border: none; }
+ul.my-group li img { width: 40px; width: 40px; }
 
 .post-list { margin: 0; padding: 0; list-style: none; }
   .post-list li { padding-bottom: 11px; }
