@@ -75,7 +75,7 @@ class UserAction extends AppAction {
                         'username' => $user['username'],
                         'avatar' => $user['avatar'],
                     ));
-                    $this->redirect('/square');
+                    $this->redirect('/home');
             }
         }
 

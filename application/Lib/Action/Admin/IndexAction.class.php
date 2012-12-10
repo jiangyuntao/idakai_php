@@ -1,10 +1,7 @@
 <?php
-class IndexAction extends Action {
+class IndexAction extends AppAction {
     public function index() {
-        echo 'in admin';
-    }
-
-    public function foo() {
-        echo 'admin foo';
+        $this->assign($this->data);
+        $this->display();
     }
 }

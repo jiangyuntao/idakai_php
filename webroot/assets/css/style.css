@@ -8,6 +8,7 @@ body { background: #F8F8F8; font-family: "微软雅黑", "Helvetica Neue", Helve
 .center { text-align: center; }
 .left { float: left; margin-right: 10px; overflow: hidden; }
 .sth { margin-left: 10px; color: #999; font-size: 12px; }
+.sth-desc { margin-left: 50px; color: #999; font-size: 12px; }
 a.green { color: #51A351; }
 label.error { margin-left: 10px; display: inline; color: #D70002; }
 

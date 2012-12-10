@@ -4,4 +4,9 @@ class GroupAction extends AppAction {
         $this->assign($this->data);
         $this->display();
     }
+
+    public function create() {
+        $this->assign($this->data);
+        $this->display();
+    }
 }
