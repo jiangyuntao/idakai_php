@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aushi Administration</title>
+<link media="all" rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/assets/css/admin.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/assets/js/jqueryfiletree/jqueryfiletree.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/assets/css/artdialog.css" type="text/css" />
+</head>
+<body>
+
+<include file="Public:navbar" />
+
+<div class="sidebar-nav">
+  <div class="well">
+    <ul class="nav nav-list">
+      <li><a href="__APP__"><i class="icon-home"></i> 欢迎页</a></li>
+      <li><div class="divider"></div></li>
+      <li class="active"><a href="__APP__/course"><i class="icon-book"></i> 课程</a></li>
+      <li><a href="__APP__/video"><i class="icon-film"></i> 视频</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/course_record"><i class="icon-th-list"></i> 授课记录</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/teacher"><i class="icon-user"></i> 教师</a></li>
+      <li><a href="__APP__/student"><i class="icon-user"></i> 学员</a></li>
+      <li><a href="__APP__/admin"><i class="icon-user"></i> 管理员</a></li>
+
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/p"><i class="icon-file"></i> 单页面</a></li>
+      <li><a href="__APP__/qa"><i class="icon-question-sign"></i> Q&amp;A</a></li>
+      <li><a href="__APP__/comment"><i class="icon-comment"></i> 评论</a></li>
+      <li><div class="divider"></div></li>
+
+      <li><a href="__APP__/language"><i class="icon-flag"></i> 语言设置</a></li>
+      <li><a href="__APP__/setting"><i class="icon-cog"></i> 系统设置</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/account/signout"><i class="icon-off"></i> 退出登录</a></li>
+    </ul>
+  </div>
+</div><!--/.sidebar-nav-->
+
+<div class="container-fluid content">
+  <div class="row-fluid">
+    <!-- Bread Crumb Navigation -->
+    <div class="span12">
+      <div>
+        <ul class="breadcrumb">
+          <li><a href="__APP__">Aushi Administration</a> <span class="divider">/</span></li>
+          <li><a href="__APP__/course">课程</a> <span class="divider">/</span></li>
+          <li class="active">新建</li>
+        </ul>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <ul class="nav nav-pills">
+            <li><a href="__APP__/course">列表</a></li>
+            <li class="active"><a href="__APP__/course/create">新建</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="box">
+            <div class="box-container">
+            <div class="box-content">
+              <form class="form form-horizontal" method="post" action="">
+                <div class="control-group">
+                  <label for="begin_hour" class="control-label">授课时间：</label>
+                  <div class="controls">
+                    <select class="input-mini" id="begin_hour" name="begin_hour">
+                      <php>for ($i = 0; $i < 24; $i++):</php>
+                      <option value="{$i}">{$i}</option>
+                      <php>endfor;</php>
+                    </select>
+                    :
+                    <select class="input-mini" id="begin_minute" name="begin_minute">
+                      <php>for ($i = 0; $i < 60; $i++):</php>
+                      <option value="{$i}">{$i|sprintf="%02d", ###}</option>
+                      <php>endfor;</php>
+                    </select>
+                    -
+                    <select class="input-mini" id="end_hour" name="end_hour">
+                      <php>for ($i = 0; $i < 24; $i++):</php>
+                      <option value="{$i}">{$i}</option>
+                      <php>endfor;</php>
+                    </select>
+                    :
+                    <select class="input-mini" id="end_minute" name="end_minute">
+                      <php>for ($i = 0; $i < 60; $i++):</php>
+                      <option value="{$i}">{$i|sprintf="%02d", ###}</option>
+                      <php>endfor;</php>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="duration" class="control-label">课程时长：</label>
+                  <div class="controls">
+                    <div class="input-append">
+                      <input type="text" class="input-mini" id="duration" name="duration" /><span class="add-on">分钟</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="price" class="control-label">价格：</label>
+                  <div class="controls">
+                    <div class="input-prepend">
+                      <span class="add-on">$</span><input type="text" class="input-mini" id="price" name="price" />
+                    </div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="picture_upload" class="control-label">课程图片：</label>
+                  <div class="controls">
+                    <input type="file" class="input-file" id="picture_upload" name="picture_upload" />
+                    <input type="hidden" id="picture" name="picture" />
+                    <input type="hidden" id="big_picture" name="big_picture" />
+                    <div id="picture_wrapper"></div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="course_video" class="control-label">课程视频：</label>
+                  <div class="controls">
+                    <input type="text" class="input-xxlarge" id="course_video" name="course_video" />
+                    <a id="select_course_video" href="javascript:;">选择视频</a>
+                    <div id="course_video_filetree" style="display: none;"></div>
+                    <div class="help-block">FLV 文件，供老师与学生同时观看</div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="recommended" class="control-label">是否推荐：</label>
+                  <div class="controls">
+                    <input type="checkbox" class="input-checkbox" id="recommended" name="recommended" value="1" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="tag" class="control-label">Tag：</label>
+                  <div class="controls">
+                    <input type="text" class="input-xxlarge" id="tag" name="tag" />
+                    <div class="help-block">内部关联用，用半角空格分隔</div>
+                  </div>
+                </div>
+                <div class="tabbable">
+                  <ul class="nav nav-tabs">
+                    <volist name="language" id="vo">
+                    <li <eq name="setting.default_language" value="$vo['language']">class="active"</eq>><a href="#{$vo.language}" data-toggle="tab">{$vo.display}</a></li>
+                    </volist>
+                  </ul>
+                  <div class="tab-content">
+                    <volist name="language" id="vo">
+                    <div class="tab-pane <eq name="setting.default_language" value="$vo['language']">active</eq>" id="{$vo.language}">
+                      <div class="control-group">
+                        <label for="title_{$vo.language}" class="control-label">标题：</label>
+                        <div class="controls">
+                          <input type="text" class="input-xlarge" id="title_{$vo.language}" name="title[{$vo.language}]" />
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label for="keywords_{$vo.language}" class="control-label">关键词：</label>
+                        <div class="controls">
+                          <input type="text" class="input-xlarge" id="keywords_{$vo.language}" name="keywords[{$vo.language}]" />
+                          <span class="help-inline">每个关键词之间用半角逗号分隔</span>
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label for="description_{$vo.language}" class="control-label">描述：</label>
+                        <div class="controls">
+                          <textarea class="input-xxlarge" id="description_{$vo.language}" name="description[{$vo.language}]" rows="4"></textarea>
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label for="content_{$vo.language}" class="control-label">内容：</label>
+                        <div class="controls">
+                          <textarea class="editor" id="content_{$vo.language}" name="content[{$vo.language}]"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    </volist>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <input class="btn btn-primary" type="submit" name="submit" value=" 保存 " />
+                </div>
+              </form>
+            </div>
+          </div>
+            </div>
+        </div>
+      </div><!--/.row-fluid-->
+
+    </div><!--/span12-->
+  </div><!--/row-fluid-->
+</div><!--/.container-fluid-->
+
+<include file="Public:footer" />
+<script src="/assets/js/uploadify/swfobject.js" type="text/javascript"></script>
+<script src="/assets/js/uploadify/jquery.uploadify.js" type="text/javascript"></script>
+<script src="/assets/js/kindeditor/kindeditor-min.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/assets/js/jqueryfiletree/jqueryfiletree.js" type="text/javascript"></script>
+<script src="/assets/js/artdialog/jquery.artdialog.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+    $('.form').validate();
+    KindEditor.create('.editor', {
+        width : '900px',
+        height : '500px'
+    });
+
+    $('#picture_upload').uploadify({
+        'uploader'  : '/assets/js/uploadify/uploadify.swf',
+        'script'    : '__APP__/course/picture_upload?PHPSESSIONID=<?php echo session_id(); ?>',
+        'cancelImg' : '/assets/js/uploadify/cancel.png',
+        'folder'    : '/files/image/',
+        'fileExt'   : '*.gif;*.bmp;*.jpg;*.jpeg;*.png',
+        'fileDesc'  : '图片文件',
+        'auto'      : true,
+        'buttonText' : '选择图片',
+        'onComplete' : function(event, ID, fileObj, response, data) {
+            var response = $.parseJSON(response);
+
+            if (response.status == 0) {
+                $('#picture_upload').uploadifyCancel();
+            } else {
+                $('#picture_wrapper').html('');
+                $('#picture_wrapper').append('<img src="' + response.data.picture + '" />');
+                $('#picture').val(response.data.picture);
+                $('#big_picture').val(response.data.big_picture);
+            }
+        }
+    });
+
+    $('#select_course_video').click(function() {
+        var dia = art.dialog({
+            title: '选择视频',
+            content: document.getElementById('course_video_filetree'),
+            lock: true,
+            background: '#000',
+            opacity: 0.5
+        });
+        $('#course_video_filetree').fileTree({ root: '/files/video/', script: '/assets/js/jqueryfiletree/connectors/jqueryfiletree.php' }, function(file) { 
+            $('#course_video').val(file);
+            dia.close();
+				});
+    });
+});
+</script>
+
+</body>
+</html>
