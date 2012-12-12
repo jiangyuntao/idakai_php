@@ -1,15 +1,21 @@
 -- --------------------------------------------------------
--- 主机                            :localhost
--- Server version                :5.5.16 - MySQL Community Server (GPL)
+-- 主机                            :127.0.0.1
+-- Server version                :5.5.8 - MySQL Community Server (GPL)
 -- Server OS                     :Win32
--- HeidiSQL 版本                   :7.0.0.4246
--- Created                       :2012-12-12 17:31:39
+-- HeidiSQL 版本                   :7.0.0.4244
+-- Created                       :2012-12-12 21:49:52
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping database structure for idakai
+DROP DATABASE IF EXISTS `idakai`;
+CREATE DATABASE IF NOT EXISTS `idakai` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `idakai`;
+
 
 -- Dumping structure for table idakai.admin
 DROP TABLE IF EXISTS `admin`;
@@ -119,21 +125,24 @@ DELETE FROM `moderator`;
 DROP TABLE IF EXISTS `p`;
 CREATE TABLE IF NOT EXISTS `p` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `alias` varchar(255) NOT NULL,
-  `sortorder` int(10) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
   `keywords` varchar(255) NOT NULL,
-  `decription` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `content` text NOT NULL,
+  `alias` varchar(255) NOT NULL,
+  `sortorder` int(10) unsigned NOT NULL,
   `created` int(10) unsigned NOT NULL,
   `modified` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `alias` (`alias`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table idakai.p: 0 rows
+-- Dumping data for table idakai.p: 1 rows
 DELETE FROM `p`;
 /*!40000 ALTER TABLE `p` DISABLE KEYS */;
+INSERT INTO `p` (`id`, `title`, `keywords`, `description`, `content`, `alias`, `sortorder`, `created`, `modified`) VALUES
+	(1, '关于我们', 'a', 'b', '关<span style="background-color: rgb(255, 102, 102);">于我</span>们', 'about', 1, 1355316356, 1355317821),
+	(2, '联系我们', '', '', '<p>电话：</p><p>地址：</p>', 'contact', 2, 1355318709, 1355320117);
 /*!40000 ALTER TABLE `p` ENABLE KEYS */;
 
 
