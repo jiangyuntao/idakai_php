@@ -1,5 +1,7 @@
 body, label { font-size: 12px; }
 label.error { margin-left: 10px; display: inline; color: #D70002; }
+.star { font-family: tahoma; color: #D70002; }
+.center { text-align: center; }
 
 .navbar-inner { padding: 0; }
 .navbar .brand {width: 200px;padding-bottom:0;padding-top:0; line-height: 40px; font-size: 16px; text-decoration:none;color: #fff}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aushi Administration</title>
+<title>Administration Center</title>
 <link media="all" rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
 <link media="all" rel="stylesheet" href="/assets/css/admin.css" type="text/css" />
 </head>
@@ -34,7 +34,7 @@
     <div class="span12">
       <div>
         <ul class="breadcrumb">
-          <li><a href="__APP__/admin">Aushi Administration</a> <span class="divider">/</span></li>
+          <li><a href="__APP__/admin">Administration Center</a> <span class="divider">/</span></li>
           <li><a href="__APP__/admin/p">单页面</a> <span class="divider">/</span></li>
           <li class="active">编辑 "{$p['title']}"</li>
         </ul>
@@ -60,8 +60,8 @@
                   <div class="controls">
                     <div class="input-prepend">
                       <span class="add-on">http:/idakai.com/p/</span><input type="text" class="input-small" id="alias" name="alias" value="{$p.alias}" />
-                      <span class="help-inline">如：about，将会生成 idakai.com/p/about 式链接</span>
                     </div>
+                    <div>如：about，将会生成 idakai.com/p/about 式链接</div>
                   </div>
                 </div>
                 <div class="control-group">
@@ -93,7 +93,7 @@
                 <div class="control-group">
                   <label for="content" class="control-label">内容：</label>
                   <div class="controls">
-                    <textarea class="xheditor" id="content" name="content" rows="20" style="width: 90%;">{$p.content}</textarea>
+                    <textarea class="xheditor { skin : 'nostyle' }" id="content" name="content" rows="20" style="width: 90%;">{$p.content}</textarea>
                   </div>
                 </div>
                 <div class="form-actions">

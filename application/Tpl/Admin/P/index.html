@@ -76,13 +76,17 @@
               <td>{$vo.alias}</td>
               <td>{$vo.modified|date="Y-m-d H:i",###}</td>
               <td>
-                <a class="btn btn-mini" href="__APP__/p/up/id/{$vo.id}"><i class="icon-arrow-up"></i></a>
-                <a class="btn btn-mini" href="__APP__/p/down/id/{$vo.id}"><i class="icon-arrow-down"></i></a>
+                <div class="btn-group">
+                  <a class="btn btn-mini" href="javascript:;" onclick="javascript:window.location.href='__APP__/admin/p/up/id/{$vo.id}'"><i class="icon-arrow-up"></i></a>
+                  <a class="btn btn-mini" href="javascript:;" onclick="javascript:window.location.href='__APP__/admin/p/down/id/{$vo.id}'"><i class="icon-arrow-down"></i></a>
+                </div>
               </td>
               <td>
-                    <a class="btn btn-mini btn-success" href="/{$setting.default_language}/p/{$vo.alias}" target="_blank">查看</a>
-                    <a class="btn btn-mini btn-info" href="__APP__/p/modify/id/{$vo.id}"><i class="icon-edit icon-white"></i> 编辑</a>
-                    <a class="btn btn-mini btn-danger" href="__APP__/p/remove/id/{$vo.id}" onclick="javascript:return confirm('确定要删除么？');"><i class="icon-trash icon-white"></i> 删除</a>
+                <div class="btn-group">
+                  <a class="btn btn-mini" href="__APP__/p/{$vo.alias}" target="_blank"><i class="icon-zoom-in"></i> 查看</a>
+                  <a class="btn btn-mini" href="__APP__/admin/p/modify/id/{$vo.id}"><i class="icon-edit"></i> 编辑</a>
+                  <a class="btn btn-mini" href="__APP__/admin/p/remove/id/{$vo.id}" onclick="javascript:return confirm('确定要删除么？');"><i class="icon-trash"></i> 删除</a>
+                </div>
               </td>
             </tr>
             </volist>
