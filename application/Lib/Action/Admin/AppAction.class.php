@@ -1,11 +1,4 @@
 <?php
-/**
- * AppAction
- *
- * @uses Action
- * @version $Id$
- * @author Thor Jiang <jiangyuntao@gmail.com>
- */
 class AppAction extends Action {
     protected $referer = '';
     protected $auth = array();
@@ -26,7 +19,6 @@ class AppAction extends Action {
 
         $this->_authorize();
         $this->_getSettings();
-        $this->_getLanguages();
 
         // 获取来路
         if (isset($_SERVER['HTTP_REFERER'])) {
@@ -42,20 +34,6 @@ class AppAction extends Action {
         }
 
         $this->assign('waitSecond', 2);
-    }
-
-    /**
-     * 判断 HTTP Method 是否为 POST
-     *
-     * @access protected
-     * @return boolean
-     */
-    protected function isPost() {
-        if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     /**
@@ -106,16 +84,5 @@ class AppAction extends Action {
         foreach ($settings as $v) {
             $this->data['setting'][$v['variable']] = $v['value'];
         }
-    }
-
-    /**
-     * 获取所有系统支持语言
-     *
-     * @access protected
-     * @return void
-     */
-    protected function _getLanguages() {
-        $language = D('Language');
-        $this->data['language'] = $language->order('sortorder desc, id desc')->select();
     }
 }
