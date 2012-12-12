@@ -1,4 +1,6 @@
-body { font-size: 12px; }
+body, label { font-size: 12px; }
+label.error { margin-left: 10px; display: inline; color: #D70002; }
+
 .navbar-inner { padding: 0; }
 .navbar .brand {width: 200px;padding-bottom:0;padding-top:0; line-height: 40px; font-size: 16px; text-decoration:none;color: #fff}
 .navbar .brand i {margin-top:5px}
@@ -29,7 +31,7 @@ body { font-size: 12px; }
   box-shadow: inset 0 1px 0 #ffffff;
 }
 
-.content { padding: 20px 20px 0 200px; *padding: 60px 20px 0 180px; *width: 83.5%; }
+.content { padding: 60px 20px 0 200px; *padding: 60px 20px 0 180px; *width: 83.5%; }
 .box {
   margin-bottom:10px;
 }

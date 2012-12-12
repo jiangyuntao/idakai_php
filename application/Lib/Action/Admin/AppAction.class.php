@@ -85,10 +85,10 @@ class AppAction extends Action {
 
         if (!$this->auth) {
             if (strtolower(MODULE_NAME) == 'index') {
-                $this->redirect('account/signin');
+                $this->redirect('/admin/account/signin');
             } else {
                 $this->assign('waitSecond', 2);
-                $this->assign('jumpUrl', U('account/signin'));
+                $this->assign('jumpUrl', U('/admin/account/signin'));
                 return $this->error('对不起，您还没有登录！');
             }
         }

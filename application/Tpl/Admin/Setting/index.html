@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aushi Administration</title>
+<link media="all" rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/assets/css/admin.css" type="text/css" />
+</head>
+<body>
+
+<include file="Public:navbar" />
+
+<div class="sidebar-nav">
+  <div class="well">
+    <ul class="nav nav-list">
+      <li><a href="__APP__"><i class="icon-home"></i> 欢迎页</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/course"><i class="icon-book"></i> 课程</a></li>
+      <li><a href="__APP__/video"><i class="icon-film"></i> 视频</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/course_record"><i class="icon-th-list"></i> 授课记录</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/teacher"><i class="icon-user"></i> 教师</a></li>
+      <li><a href="__APP__/student"><i class="icon-user"></i> 学员</a></li>
+      <li><a href="__APP__/admin"><i class="icon-user"></i> 管理员</a></li>
+
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/p"><i class="icon-file"></i> 单页面</a></li>
+      <li><a href="__APP__/qa"><i class="icon-question-sign"></i> Q&amp;A</a></li>
+      <li><a href="__APP__/comment"><i class="icon-comment"></i> 评论</a></li>
+      <li><div class="divider"></div></li>
+
+      <li><a href="__APP__/language"><i class="icon-flag"></i> 语言设置</a></li>
+      <li class="active"><a href="__APP__/setting"><i class="icon-cog"></i> 系统设置</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="__APP__/account/signout"><i class="icon-off"></i> 退出登录</a></li>
+    </ul>
+  </div>
+</div><!--/.sidebar-nav-->
+
+<div class="container-fluid content">
+  <div class="row-fluid">
+    <!-- Bread Crumb Navigation -->
+    <div class="span12">
+      <div>
+        <ul class="breadcrumb">
+          <li><a href="__APP__">Aushi Administration</a> <span class="divider">/</span></li>
+          <li class="active">系统设置</li>
+        </ul>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="box">
+            <div class="box-container">
+            <div class="box-content">
+              <form class="form-horizontal" method="post" action="">
+                <fieldset>
+                  <legend><h5>基本设置</h5></legend>
+                  <div class="control-group">
+                    <label for="default_language" class="control-label">默认语言</label>
+                    <div class="controls">
+                      <select id="default_language" name="default_language">
+                        <volist name="language" id="vo">
+                        <option value="{$vo.language}" <eq name="setting.default_language" value="$vo['language']">selected="selected"</eq>>{$vo.display}</option>
+                        </volist>
+                      </select>
+                      <span class="help-block">网站默认显示的语言版本</span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="taboo" class="control-label">敏感词：</label>
+                    <div class="controls">
+                      <textarea class="input-xxlarge" rows="5" id="taboo" name="taboo">{$setting.taboo}</textarea>
+                      <span class="help-block">每个敏感词之间用半角逗号分隔</span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="course_picture_width" class="control-label">课程图片宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="course_picture_width" name="course_picture_width" value="{$setting.course_picture_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="course_picture_height" class="control-label">课程图片高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="course_picture_height" name="course_picture_height" value="{$setting.course_picture_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="course_big_picture_width" class="control-label">课程大图片宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="course_big_picture_width" name="course_big_picture_width" value="{$setting.course_big_picture_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="course_big_picture_height" class="control-label">课程大图片高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="course_big_picture_height" name="course_big_picture_height" value="{$setting.course_big_picture_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="video_picture_width" class="control-label">视频图片宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="video_picture_width" name="video_picture_width" value="{$setting.video_picture_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="video_picture_height" class="control-label">视频图片高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="video_picture_height" name="video_picture_height" value="{$setting.video_picture_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_big_width" class="control-label">大头像宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_big_width" name="avatar_big_width" value="{$setting.avatar_big_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_big_height" class="control-label">大头像高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_big_height" name="avatar_big_height" value="{$setting.avatar_big_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_medium_width" class="control-label">中头像宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_medium_width" name="avatar_medium_width" value="{$setting.avatar_medium_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_medium_height" class="control-label">中头像高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_medium_height" name="avatar_medium_height" value="{$setting.avatar_medium_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_small_width" class="control-label">小头像宽度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_small_width" name="avatar_small_width" value="{$setting.avatar_small_width}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="avatar_small_height" class="control-label">小头像高度：</label>
+                    <div class="controls">
+                      <div class="input-append">
+                        <input type="text" class="input-small" id="avatar_small_height" name="avatar_small_height" value="{$setting.avatar_small_height}" /><span class="add-on">px (像素)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="teacher_avatar_default" class="control-label">教师默认头像：</label>
+                    <div class="controls">
+                      <input type="text" class="input-xxlarge" id="teacher_avatar_default" name="teacher_avatar_default" value="{$setting.teacher_avatar_default}" />
+                      <span class="help-block">类似：http://aushi/files/a.jpg</span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="student_avatar_default" class="control-label">学员默认头像：</label>
+                    <div class="controls">
+                      <input type="text" class="input-xxlarge" id="student_avatar_default" name="student_avatar_default" value="{$setting.student_avatar_default}" />
+                      <span class="help-block">类似：http://aushi/files/a.jpg</span>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend><h5>用户相关设置</h5></legend>
+                  <div class="control-group">
+                    <label for="forbidden_username" class="control-label">禁用用户名：</label>
+                    <div class="controls">
+                      <textarea class="input-xxlarge" rows="5" id="forbidden_username" name="forbidden_username">{$setting.forbidden_username}</textarea>
+                      <span class="help-block">每个禁用用户名之间用半角逗号分隔</span>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend><h5>BigBlueButton 设置</h5></legend>
+                </fieldset>
+                <fieldset>
+                  <legend><h5>支付设置</h5></legend>
+                  <div class="control-group">
+                    <label for="paypal_gateway" class="control-label">Paypal支付网关：</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="paypal_gateway" name="paypal_gateway" value="{$setting.paypal_gateway}" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="paypal_username" class="control-label">Paypal用户名：</label>
+                    <div class="controls">
+                      <input type="text" class="input-large" id="paypal_username" name="paypal_username" value="{$setting.paypal_username}" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="paypal_password" class="control-label">Paypal密码：</label>
+                    <div class="controls">
+                      <input type="text" class="input-large" id="paypal_password" name="paypal_password" value="{$setting.paypal_password}" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="paypal_signature" class="control-label">Paypal签名：</label>
+                    <div class="controls">
+                      <input type="text" class="input-large" id="paypal_signature" name="paypal_signature" value="{$setting.paypal_signature}" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="paypal_account" class="control-label">Paypal收款账号：</label>
+                    <div class="controls">
+                      <input type="text" class="input-large" id="paypal_account" name="paypal_account" value="{$setting.paypal_account}" />
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="form-actions">
+                  <input class="btn btn-primary" type="submit" name="submit" value=" 保存 " />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/.row-fluid-->
+
+  </div><!--/span12-->
+</div><!--/row-fluid-->
+</div><!--/.container-fluid-->
+
+<include file="Public:footer" />
+
+</body>
+</html>
