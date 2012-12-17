@@ -34,9 +34,6 @@ class PAction extends AppAction {
         $p = D('P');
 
         if ($this->isPost()) {
-            $_POST['author'] || $_POST['author'] = $this->auth['username'];
-
-            // 主表添加信息
             if ($p->create() && $id = $p->add()) {
                 // 根据 id 更新 sortorder
                 $p->find($id);
@@ -61,9 +58,6 @@ class PAction extends AppAction {
         $p = D('P');
 
         if ($this->isPost()) {
-            $_POST['author'] || $_POST['author'] = $this->auth['username'];
-
-            // 修改主表信息
             if ($p->create() && $p->save()) {
                 $this->assign('waitSecond', 2);
                 $this->assign('jumpUrl', U('/admin/p/modify', 'id=' . $_GET['id']));

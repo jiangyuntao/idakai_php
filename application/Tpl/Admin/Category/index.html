@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aushi Administration</title>
+<title>Administration Center</title>
 <link media="all" rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" />
 <link media="all" rel="stylesheet" href="/assets/css/admin.css" type="text/css" />
 </head>
@@ -15,25 +15,15 @@
     <ul class="nav nav-list">
       <li><a href="__APP__/admin"><i class="icon-home"></i> 欢迎页</a></li>
       <li><div class="divider"></div></li>
-      <li class="active"><a href="__APP__/course"><i class="icon-book"></i> 课程</a></li>
-      <li><a href="__APP__/video"><i class="icon-film"></i> 视频</a></li>
+      <li class="active"><a href="__APP__/admin/category"><i class="icon-th-large"></i> 小组分类</a></li>
+      <li><a href="__APP__/admin/group"><i class="icon-th"></i> 小组</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="__APP__/course_record"><i class="icon-th-list"></i> 授课记录</a></li>
+      <li><a href="__APP__/admin/user"><i class="icon-user"></i> 会员</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="__APP__/teacher"><i class="icon-user"></i> 教师</a></li>
-      <li><a href="__APP__/student"><i class="icon-user"></i> 学员</a></li>
-      <li><a href="__APP__/admin"><i class="icon-user"></i> 管理员</a></li>
-
+      <li><a href="__APP__/admin/p"><i class="icon-file"></i> 单页面</a></li>
+      <li><a href="__APP__/admin/setting"><i class="icon-cog"></i> 系统设置</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="__APP__/p"><i class="icon-file"></i> 单页面</a></li>
-      <li><a href="__APP__/qa"><i class="icon-question-sign"></i> Q&amp;A</a></li>
-      <li><a href="__APP__/comment"><i class="icon-comment"></i> 评论</a></li>
-      <li><div class="divider"></div></li>
-
-      <li><a href="__APP__/language"><i class="icon-flag"></i> 语言设置</a></li>
-      <li><a href="__APP__/setting"><i class="icon-cog"></i> 系统设置</a></li>
-      <li><div class="divider"></div></li>
-      <li><a href="__APP__/account/signout"><i class="icon-off"></i> 退出登录</a></li>
+      <li><a href="__APP__/admin/account/signout"><i class="icon-off"></i> 退出登录</a></li>
     </ul>
   </div>
 </div><!--/.sidebar-nav-->
@@ -44,8 +34,8 @@
     <div class="span12">
       <div>
         <ul class="breadcrumb">
-          <li><a href="__APP__">Administration Center</a> <span class="divider">/</span></li>
-          <li><a href="__APP__/course">课程</a> <span class="divider">/</span></li>
+          <li><a href="__APP__/admin">Administration Center</a> <span class="divider">/</span></li>
+          <li><a href="__APP__/admin/category">小组分类</a> <span class="divider">/</span></li>
           <li class="active">列表</li>
         </ul>
       </div>
@@ -53,8 +43,8 @@
       <div class="row-fluid">
         <div class="span8">
           <ul class="nav nav-pills">
-            <li class="active"><a href="__APP__/course">列表</a></li>
-            <li><a href="__APP__/course/create">新建</a></li>
+            <li class="active"><a href="__APP__/admin/category">列表</a></li>
+            <li><a href="__APP__/admin/category/create">新建</a></li>
           </ul>
         </div>
         <div class="span4 input-append align-right">
@@ -71,42 +61,28 @@
             <thead>
               <tr>
                 <th width="40">#</th>
-                <th>课程</th>
-                <th>课程时间</th>
-                <th>授课时长</th>
-                <th>价格</th>
-                <th>推荐</th>
-                <th width="185">操作</th>
+                <th>分类名称</th>
+                <th width="100">保存时间</th>
+                <th width="50">排序</th>
+                <th width="110">操作</th>
               </tr>
             </thead>
             <tbody>
             <volist name="list" id="vo">
             <tr>
               <td><span class="label">{$vo.id}</span></td>
-              <td>{$vo.title|msubstr=###, 0, 25}</td>
-              <td>{$vo.course_time}</td>
-              <td>{$vo.duration}分钟</td>
-              <td>${$vo.price}</td>
-              <td><eq name="vo.recommended" value="1"><span class="label label-success">是</span><else /><span class="label label-important">否</span></eq></td>
+              <td>{$vo.name}</td>
+              <td>{$vo.modified|date="Y-m-d H:i",###}</td>
               <td>
-                <div class="btn-toolbar">
-                  <div class="btn-group">
-                    <a class="btn btn-mini btn-success" href="/{$setting.default_language}/course/{$vo.id}" target="_blank">查看</a>
-                    <a class="btn btn-mini btn-success dropdown-toggle" data-toggle="dropdown">
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <volist name="language" id="vo_lang">
-                      <li><a href="/{$vo_lang.language}/course/{$vo.id}" target="_blank">{$vo_lang.display}</a></li>
-                      </volist>
-                    </ul>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn btn-mini btn-info" href="__APP__/course/modify/id/{$vo.id}"><i class="icon-edit icon-white"></i> 编辑</a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn btn-mini btn-danger" href="__APP__/course/remove/id/{$vo.id}" onclick="javascript:return confirm('确定要删除么？');"><i class="icon-trash icon-white"></i> 删除</a>
-                  </div>
+                <div class="btn-group">
+                  <a class="btn btn-mini" href="javascript:;" onclick="javascript:window.location.href='__APP__/admin/category/up/id/{$vo.id}'"><i class="icon-arrow-up"></i></a>
+                  <a class="btn btn-mini" href="javascript:;" onclick="javascript:window.location.href='__APP__/admin/category/down/id/{$vo.id}'"><i class="icon-arrow-down"></i></a>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <a class="btn btn-mini" href="__APP__/admin/category/modify/id/{$vo.id}"><i class="icon-edit"></i> 编辑</a>
+                  <a class="btn btn-mini" href="__APP__/admin/category/remove/id/{$vo.id}" onclick="javascript:return confirm('确定要删除么？');"><i class="icon-trash"></i> 删除</a>
                 </div>
               </td>
             </tr>
@@ -124,5 +100,6 @@
 </div><!--/.container-fluid-->
 
 <include file="Public:footer" />
+
 </body>
 </html>
