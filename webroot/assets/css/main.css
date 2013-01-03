@@ -1,0 +1,5 @@
+@import url("bootstrap.min.css");
+html { overflow-y: scroll; }
+body { background: #FAFAFA; color: #838383; font:12px/18px "微软雅黑", Arial, Helvetica, sans-serif; }
+.navbar .nav li a.dropdown-toggle { padding-right: 0; }
+.footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; }

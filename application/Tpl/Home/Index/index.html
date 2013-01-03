@@ -2,267 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>大开网-大连开发区社交网站</title>
-<link media="all" rel="stylesheet" href="/assets/css/bootstrap.css" type="text/css" />
-<link media="all" rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+<title>大开网 - 大连开发区社交网站</title>
+<link media="all" rel="stylesheet" href="/assets/css/main.css" type="text/css" />
 </head>
 <body>
-  <include file="Public:header" />
-  <div class="container">
-    <div class="row-fluid">
-      <div class="span12">
-        <!--
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">×</button>
-          我们强烈建议您使用非IE浏览器：安全！快速！美观！
-          <a href="#">Chrome</a>
-          &nbsp;&nbsp;
-          <a href="#">Firefox</a>
-          &nbsp;&nbsp;
-          <a href="#">Opera</a>
-        </div>
-        -->
-        <div class="box">
-          <div class="left">
-            <img src="/assets/img/tmp/8gst_kqyxc3kkm5bfcvsugfjeg5sckzsew_340x185.png" alt="" />
-          </div>
-          <ul class="left post-list">
-            <li><a class="green" href="#">某小小组</a> · <a href="#">秋冬身体护理 皮干物女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
-            <li><a class="green" href="#">某小组小</a> · <a href="#">秋冬身 拒做脱皮干物女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
-            <li><a class="green" href="#">某小组</a> · <a href="#">秋冬身体护理 拒做脱皮干物女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
-            <li><a class="green" href="#">某小组小小</a> · <a href="#">秋冬身体护理 拒做脱皮干物女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
-            <li><a class="green" href="#">某小小组</a> · <a href="#">秋冬身体护理 拒做脱女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
-            <li><a class="green" href="#">某组</a> · <a href="#">秋冬身体护理 拒做脱皮干物女瘦手臂呀瘦粗腿!</a><span class="sth">2012-04-21 10:32</span></li>
+  
+<div class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a href="__APP__/" class="brand" title="大开网">大开网</a>
+
+      <ul class="nav">
+        <li><a href="__APP__/home">我的</a></li>
+        <li><a href="__APP__/topic">全部话题</a></li>
+        <li><a href="__APP__/search">搜索</a></li>
+      </ul>
+
+      <if condition="$logged_in">
+      <ul class="nav pull-right">
+        <li>
+          <a id="user-profile-dropdown" class="dropdown-toggle" data-toggle="dropdown" href="__APP__/profile">无言以对 <b class="caret"></b></a>
+          <ul class="dropdown-menu" aria-labelledby="user-profile-dropdown">
+            <li><a href="__APP__/my/message"><i class="icon-envelope"></i> 我的消息</a></li>
+            <li><a href="__APP__/my/profile"><i class="icon-user"></i> 个人资料</a></li>
+            <li><a href="__APP__/my/avatar"><i class="icon-picture"></i> 修改头像</a></li>
+            <li class="divider"></li>
+            <li><a href="__APP__/signout"><i class="icon-off"></i> 退出登录</a></li>
           </ul>
-        </div>
+        </li>
+      </ul>
+      <else />
+      <div class="pull-right">
+        <a class="btn btn-small" href="__APP__/signin"><i class="icon-lock"></i> 登录</a>
+        &nbsp;&nbsp;
+        <a class="btn btn-small" href="__APP__/signup"><i class="icon-user"></i> 轻松注册</a>
       </div>
-    </div>
-    <div class="row-fluid">
-      <div class="span8">
-        <h2 class="box-title">
-          <span>推荐小组</span>
-          <span class="link"><a href="#">全部小组</a></span>
-        </h2>
-        <div class="box">
-          <ul class="group">
-            <li>
-              <div>
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    博客背景，微博背景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-              <div class="right">
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <br />
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    唯美等无缝预览下载。推荐用途景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <br />
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    唯美等无缝。推荐用途：博客背景，微博背景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-              <div class="right">
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <br />
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    下载。推荐用途：博客背景，微博背景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-            </li>
-            <li class="end">
-              <div>
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <br />
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    唯美等无途：博客背景，微博背景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-              <div class="right">
-                <p class="group-avatar">
-                  <a href="__APP__/g/12"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                  <br />
-                  <a class="btn btn-mini" href="__APP__/g/12/join">+加入</a>
-                </p>
-                <p class="group-desc">
-                  <a class="green" href="__APP__/g/12">安盛购物广场</a>
-                  <span class="sth">2312人</span>
-                  <br />
-                  <span class="desc">
-                    唯美等无缝预览下：博客背景，微博背景，网页专题背景...
-                  </span>
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <h2 class="box-title">优秀小组长</h2>
-        <div class="box">
-          <ul class="group-leader">
-            <li>
-              <div>
-                <a href="__APP__/u/1363"><img src="/assets/img/tmp/b6hla_kqyugockm5bg2s3wgfjeg5sckzsew_200x200.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/1363">Joyce哒哒</a>
-                <br />
-                <a class="green" href="__APP__/g/98">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/1363/watch">+加关注</a>
-              </div>
-              <div>
-                <a href="__APP__/u/379"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/379">小轻轻爱大懒懒</a>
-                <br />
-                <a class="green" href="__APP__/g/32">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/379/watch">+加关注</a>
-              </div>
-              <div>
-                <a href="__APP__/u/1363"><img src="/assets/img/tmp/b6hla_kqyugockm5bg2s3wgfjeg5sckzsew_200x200.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/1363">Joyce哒哒</a>
-                <br />
-                <a class="green" href="__APP__/g/98">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/1363/watch">+加关注</a>
-              </div>
-              <div class="right">
-                <a href="__APP__/u/379"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/379">小轻轻爱大懒懒</a>
-                <br />
-                <a class="green" href="__APP__/g/32">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/379/watch">+加关注</a>
-              </div>
-            </li>
-            <li class="end">
-              <div>
-                <a href="__APP__/u/1363"><img src="/assets/img/tmp/b6hla_kqyugockm5bg2s3wgfjeg5sckzsew_200x200.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/1363">Joyce哒哒</a>
-                <br />
-                <a class="green" href="__APP__/g/98">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/1363/watch">+加关注</a>
-              </div>
-              <div>
-                <a href="__APP__/u/379"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/379">小轻轻爱大懒懒</a>
-                <br />
-                <a class="green" href="__APP__/g/32">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/379/watch">+加关注</a>
-              </div>
-              <div>
-                <a href="__APP__/u/1363"><img src="/assets/img/tmp/b6hla_kqyugockm5bg2s3wgfjeg5sckzsew_200x200.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/1363">Joyce哒哒</a>
-                <br />
-                <a class="green" href="__APP__/g/98">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/1363/watch">+加关注</a>
-              </div>
-              <div class="right">
-                <a href="__APP__/u/379"><img src="/assets/img/tmp/3aady_kqyuo4cdm5bfirkugfjeg5sckzsew_160x239.jpg_100x100.jpg" /></a>
-                <br />
-                <a href="__APP__/u/379">小轻轻爱大懒懒</a>
-                <br />
-                <a class="green" href="__APP__/g/32">安盛购物广场</a>
-                <br />
-                <a class="btn btn-mini" href="__APP__/u/379/watch">+加关注</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="span4">
-        <!--
-        <h2 class="box-title">登录大开网</h2>
-        <div class="box">
-          <include file="Public:login_block" />
-        </div>
-        -->
-        <h2 class="box-title">
-          <span>热门话题</span>
-          <span class="link"><a href="#">全部话题</a></span>
-        </h2>
-        <div class="box">
-          <ul class="sidebar-topic">
-            <li><a href="#">两万只熊猫被投入成都锦江</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">什么是双盲试验</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">从汤唯不吃回锅肉想到的——什么菜才是文艺的？</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">掐点坐公交，三个月追到了女孩，我又相信爱情了。</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">什么是双盲试验</a><span class="sth">32评/732阅</span></li>
-            <li class="end"><a href="#">两万只熊猫被投入成都锦江</a><span class="sth">32评/732阅</span></li>
-          </ul>
-        </div>
-        <h2 class="box-title">
-          <span>最新话题</span>
-          <span class="link"><a href="#">全部话题</a></span>
-        </h2>
-        <div class="box">
-          <ul class="sidebar-topic">
-            <li><a href="#">从汤唯不吃回锅肉想到的——什么菜才是文艺的？</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">掐点坐公交，三个月追到了女孩，我又相信爱情了。</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">什么是双盲试验</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">从汤唯不吃回锅肉想到的——什么菜才是文艺的？</a><span class="sth">32评/732阅</span></li>
-            <li><a href="#">掐点坐公交，三个月追到了女孩，我又相信爱情了。</a><span class="sth">32评/732阅</span></li>
-            <li class="end"><a href="#">两万只熊猫被投入成都锦江</a><span class="sth">32评/732阅</span></li>
-          </ul>
-        </div>
-      </div>
+      </if>
+
     </div>
   </div>
-  <include file="Public:footer" />
+</div>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span9">
+      fdsa
+    </div>
+    <div class="span3">
+      fdsa
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <p class="pull-left">&copy; 2013 <a href="http://idakai.com/">大开网</a>. 保留所有权利.</p>
+    <p class="pull-right">
+    <a href="__APP__/about" target="_blank">关于我们</a>
+    &nbsp;
+    <a href="__APP__/disclaimer" target="_blank">免责声明</a>
+    </p>
+  </div>
+</div>
 <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
