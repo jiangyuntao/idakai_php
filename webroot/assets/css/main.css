@@ -1,5 +1,23 @@
 @import url("bootstrap.min.css");
 html { overflow-y: scroll; }
-body { background: #FAFAFA; color: #838383; font:12px/18px "微软雅黑", Arial, Helvetica, sans-serif; }
+body { background: #FFF; color: #838383; font:13px/18px "Microsoft Yahei", Arial, Helvetica, sans-serif; }
 .navbar .nav li a.dropdown-toggle { padding-right: 0; }
-.footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; }
+.main { padding-top: 40px; }
+.block { margin: 20px 0 10px; overflow: hidden; }
+  .block .title { overflow: hidden; margin-bottom: 15px; }
+    .block .title .r { float: right; font-family: Arial; line-height: 28px; }
+    .block .title h5 { margin: 0; padding-bottom: 5px; color: #3A3A3A; font-weight: normal; font-size: 15px; float: left; border-bottom: 2px solid #0088CC; }
+      .block .title h5 i { margin-top: 3px; }
+  .block .group-tag { font-size: 12px; }
+    .block .group-tag ul { margin: 0; padding: 0 0 10px 0; }
+      .block .group-tag ul li { margin: 5px 5px 5px 0; float: left; width: 70px; text-align: center; line-height: 25px; }
+        .block .group-tag ul li a { display: block; }
+        .block .group-tag ul li a.active, .block .group-tag ul li a:hover { background: #0088CC; color: #FFF; text-decoration: none; }
+  .block ul { margin: 30px 0 10px 0; padding: 0; list-style: none; overflow: hidden; border-bottom: 1px solid #EEE; }
+    .block ul li.index-group div { padding-right: 10px; float: left; overflow: hidden; max-width: 220px; }
+    .block ul li.index-group div.group-avatar { text-align: center; }
+      .block ul li.index-group div.group-avatar img { width: 50px; height: 50px; }
+    .block ul li.index-group div.group-info { margin-top: -1px; }
+      .block ul li.index-group div p { font-size: 12px; color: #666; }
+      .block ul li.index-group div .muted { margin-left: 15px; font-size: 12px; }
+.footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; font-size: 12px; }

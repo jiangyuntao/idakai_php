@@ -7,25 +7,20 @@
 </head>
 <body>
   
-<div class="navbar navbar-static-top">
+<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
 
       <a href="__APP__/" class="brand" title="大开网">大开网</a>
 
-      <ul class="nav">
-        <li><a href="__APP__/home">我的</a></li>
-        <li><a href="__APP__/topic">全部话题</a></li>
-        <li><a href="__APP__/search">搜索</a></li>
-      </ul>
-
       <if condition="$logged_in">
       <ul class="nav pull-right">
+          <li><a href="__APP__/my/message">消息(0)</a></li>
         <li>
-          <a id="user-profile-dropdown" class="dropdown-toggle" data-toggle="dropdown" href="__APP__/profile">无言以对 <b class="caret"></b></a>
+          <a id="user-profile-dropdown" class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">无言以对 <b class="caret"></b></a>
           <ul class="dropdown-menu" aria-labelledby="user-profile-dropdown">
-            <li><a href="__APP__/my/message"><i class="icon-envelope"></i> 我的消息</a></li>
-            <li><a href="__APP__/my/profile"><i class="icon-user"></i> 个人资料</a></li>
+            <li><a href="__APP__/home"><i class="icon-home"></i> 我的首页</a></li>
+            <li><a href="__APP__/my/profile"><i class="icon-user"></i> 我的资料</a></li>
             <li><a href="__APP__/my/avatar"><i class="icon-picture"></i> 修改头像</a></li>
             <li class="divider"></li>
             <li><a href="__APP__/signout"><i class="icon-off"></i> 退出登录</a></li>
@@ -44,13 +39,194 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container main">
   <div class="row-fluid">
-    <div class="span9">
-      fdsa
+    <div class="span8">
+      <div class="block">
+        <div class="title">
+          <h5><i class="icon-th-large"></i> 小组分类</h5>
+        </div>
+        <div class="group-tag">
+          <ul>
+            <li><a href="__APP__/group/tag/all">查看全部</a></li>
+            <li><a href="__APP__/group/tag/xiaoqu">小区</a></li>
+            <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
+            <li><a href="__APP__/group/tag/gongzuodanwei">工作单位</a></li>
+            <li><a href="__APP__/group/tag/xiaoqu">小区</a></li>
+            <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
+            <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
+            <li><a href="__APP__/group/tag/gongzuodanwei">工作单位</a></li>
+            <li><a class="active" href="__APP__/group/tag/xiaoqu">小区</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="title">
+          <h5><i class="icon-list"></i> 小组列表</h5>
+        </div>
+        <ul>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a1.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a2.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a1.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a2.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a1.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a2.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a1.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a2.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a1.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+          <li class="span6 index-group">
+            <div class="group-avatar">
+              <a href="#"><img class="img-polaroid" src="/assets/img/tmp/a2.jpg" width="50" height="50" /></a>
+              <p><a class="" href="#">+加入</a></p>
+            </div>
+            <div class="group-info">
+              <a href="#">我是小纯洁</a>
+              <span class="muted">374人</span>
+              <p>赤脚走在乌镇的青石板路上，从脚底慢慢浸透整个身躯，让乌镇浓...</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pagination">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">上一页</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">下一页</a></li>
+          <li><a href="#">末页</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="span3">
-      fdsa
+
+    <div class="span4">
+      <div class="block">
+        <div class="title">
+          <a class="r" href="#">查看全部 &raquo;</a>
+          <h5><i class="icon-search"></i> 搜索</h5>
+        </div>
+        <form class="form-inline">
+          <div class="input-prepend input-append">
+            <select class="span3" name="type">
+              <option value="">小组</option>
+              <option value="">话题</option>
+              <option value="">用户</option>
+            </select>
+            <input type="text" class="span7" />
+            <input type="submit" class="btn" name="submit" value=" 搜索 " />
+          </div>
+        </form>
+      </div>
+
+      <div class="">
+        <a class="btn btn-success" href="#">申请创建小组</a>
+      </div>
+
+      <div class="block">
+        <img src="http://static.googleadsserving.cn/pagead/imgad?id=CICAgIDQtNPVIBD6ARj6ATIIdG7EMkx3usA" alt="" width="300" />
+      </div>
     </div>
   </div>
 </div>
