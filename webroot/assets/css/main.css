@@ -18,6 +18,10 @@ body { background: #FFF; color: #838383; font:13px/18px "Microsoft Yahei", Arial
     .block ul li.index-group div.group-avatar { text-align: center; }
       .block ul li.index-group div.group-avatar img { width: 50px; height: 50px; }
     .block ul li.index-group div.group-info { margin-top: -1px; }
+      .block ul li.index-group div.group-info a { font-weight: bold; }
       .block ul li.index-group div p { font-size: 12px; color: #666; }
       .block ul li.index-group div .muted { margin-left: 15px; font-size: 12px; }
+  .block blockquote div.status { float: left; width: 100px; }
+  .block blockquote a { margin: 0 10px; font-size: 12px; }
+  .block blockquote a.last { margin-right: 0; }
 .footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; font-size: 12px; }

@@ -48,7 +48,7 @@
         </div>
         <div class="group-tag">
           <ul>
-            <li><a href="__APP__/group/tag/all">查看全部</a></li>
+            <li><a class="active" href="__APP__/group/tag/all">查看全部</a></li>
             <li><a href="__APP__/group/tag/xiaoqu">小区</a></li>
             <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
             <li><a href="__APP__/group/tag/gongzuodanwei">工作单位</a></li>
@@ -56,7 +56,7 @@
             <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
             <li><a href="__APP__/group/tag/xuexiao">学校</a></li>
             <li><a href="__APP__/group/tag/gongzuodanwei">工作单位</a></li>
-            <li><a class="active" href="__APP__/group/tag/xiaoqu">小区</a></li>
+            <li><a href="__APP__/group/tag/xiaoqu">小区</a></li>
           </ul>
         </div>
       </div>
@@ -208,24 +208,34 @@
           <h5><i class="icon-search"></i> 搜索</h5>
         </div>
         <form class="form-inline">
-          <div class="input-prepend input-append">
-            <select class="span3" name="type">
-              <option value="">小组</option>
-              <option value="">话题</option>
-              <option value="">用户</option>
-            </select>
-            <input type="text" class="span7" />
-            <input type="submit" class="btn" name="submit" value=" 搜索 " />
+          <div class="input-append">
+          <input type="text" name="q" placeholder="搜索小组,话题,用户" />
+          <input type="submit" class="btn" name="submit" value=" 搜索 " />
           </div>
         </form>
       </div>
 
-      <div class="">
-        <a class="btn btn-success" href="#">申请创建小组</a>
+      <div>
       </div>
 
       <div class="block">
-        <img src="http://static.googleadsserving.cn/pagead/imgad?id=CICAgIDQtNPVIBD6ARj6ATIIdG7EMkx3usA" alt="" width="300" />
+        <div class="title">
+          <h5>运行状态</h5>
+        </div>
+        <blockquote>
+          <div class="status"><strong>小组</strong>: 32</div>
+          <a href="#"><i class="icon-plus"></i> 创建小组</a>
+          <a class="last" href="#"><i class="icon-list"></i> 所有小组</a>
+        </blockquote>
+        <blockquote>
+          <div class="status"><strong>话题</strong>: 78482903</div>
+          <a href="#"><i class="icon-pencil"></i> 发起话题</a>
+          <a class="last" href="#"><i class="icon-list"></i> 所有话题</a>
+        </blockquote>
+        <blockquote>
+          <div class="status"><strong>会员</strong>: 108</div>
+          <a class="last" href="#"><i class="icon-list"></i> 所有会员</a>
+        </blockquote>
       </div>
     </div>
   </div>
