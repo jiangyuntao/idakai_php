@@ -111,7 +111,7 @@
         <div class="my-groups">
           <ul>
             <li>
-              <a href="#"><img src="/assets/img/tmp/a1.jpg" alt="" class="img-polaroid" /></a>
+              <a rel="tooltip" title="我们都是小纯洁" href="#"><img src="/assets/img/tmp/a1.jpg" alt="" class="img-polaroid" /></a>
             </li>
             <li>
               <a href="#"><img src="/assets/img/tmp/a2.jpg" alt="" class="img-polaroid" /></a>
@@ -155,6 +155,9 @@
 </div>
 
 <include file="Public:footer" />
+<script type="text/javascript">
+$('a[rel="tooltip"]').tooltip();
+</script>
 
 </body>
 </html>
