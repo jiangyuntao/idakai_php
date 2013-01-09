@@ -29,8 +29,10 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
   /* 话题列表 */
   .block .topic-list .group-name { margin-right: 10px; padding: 0 5px; background: #0088CC; float: left; }
     .block .topic-list .group-name a { display: block; color: #FFF; text-decoration: none; }
-  .block .topic-list .title { font-weight: bold; }
-  .block .topic-list i { margin-top: 3px; }
+  .block .topic-list .title { margin-bottom: 10px; font-weight: bold; font-size: 14px; }
+  .block .topic-list ul.inline { margin: 0 0 10px 0; padding: 0; border: none; }
+    .block .topic-list ul.inline li { margin-right: 15px; float: left; color: #999; font-size: 12px; }
+  .block .topic-list .description { margin-bottom: 5px; color: #666; font-size: 12px; }
   /* End 话题列表 */
   .block blockquote div.status { float: left; width: 113px; }
   .block blockquote a { margin: 0 10px; font-size: 12px; }
