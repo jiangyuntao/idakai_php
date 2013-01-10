@@ -16,6 +16,8 @@ return array(
         'profile' => 'User/profile',
         'about' => array('Page/show', 'slug=about'),
         'disclaimer' => array('Page/show', 'slug=disclaimer'),
+        'g/:id\d' => array('Group/detail'),
+        't/:id\d' => array('Topic/detail'),
     ),
     'TMPL_CACHE_ON' => false,
     'SALT' => '"H<Q{CMD?s,{',

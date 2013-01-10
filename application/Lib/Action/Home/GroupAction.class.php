@@ -5,6 +5,11 @@ class GroupAction extends AppAction {
         $this->display();
     }
 
+    public function detail() {
+        $this->assign($this->data);
+        $this->display();
+    }
+
     public function create() {
         $category = D('Category');
         $this->data['categories'] = $category->getList();
