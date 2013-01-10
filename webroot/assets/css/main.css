@@ -1,6 +1,7 @@
 @import url("bootstrap.min.css");
 html { overflow-y: scroll; }
 body { background: #FFF; color: #838383; font:13px/18px "Microsoft Yahei", Arial, Helvetica, sans-serif; }
+.margin-left-10 { margin-left: 10px; }
 label.error { margin-left: 10px; display: inline; color: #D70002; }
 .table th.center, .table td.center { text-align: center; }
 .navbar .nav li a.dropdown-toggle { padding-right: 0; }
@@ -9,6 +10,7 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
 .block { margin: 20px 0 10px; overflow: hidden; }
   .block .title { overflow: hidden; margin-bottom: 15px; }
     .block .title .r { float: right; font-family: Arial; line-height: 28px; }
+      .block .title .r a { margin-left: 10px; }
     .block .title h5 { margin: 0; padding-bottom: 5px; color: #3A3A3A; font-weight: normal; font-size: 15px; float: left; border-bottom: 2px solid #0088CC; font-weight: bold; }
       .block .title h5 i { margin-top: 3px; }
     .block .title span.tag-name { margin-left: 20px; }
@@ -27,12 +29,13 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
       .block ul li.index-group div .muted { margin-left: 15px; font-size: 12px; }
   .block ul.nav-tabs { border: none; }
   /* 话题列表 */
+  .block .topic-list .table td { padding: 15px 8px; }
   .block .topic-list .group-name { margin-right: 10px; padding: 0 5px; background: #0088CC; float: left; }
     .block .topic-list .group-name a { display: block; color: #FFF; text-decoration: none; }
   .block .topic-list .title { margin-bottom: 10px; font-weight: bold; font-size: 14px; }
   .block .topic-list ul.inline { margin: 0 0 10px 0; padding: 0; border: none; }
     .block .topic-list ul.inline li { margin-right: 15px; float: left; color: #999; font-size: 12px; }
-  .block .topic-list .description { margin-bottom: 5px; color: #666; font-size: 12px; }
+  .block .topic-list .description { color: #666; font-size: 12px; }
   /* End 话题列表 */
   .block blockquote div.status { float: left; width: 113px; }
   .block blockquote a { margin: 0 10px; font-size: 12px; }
@@ -52,4 +55,15 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
     .block .my-groups ul li { margin: 0 33px 20px 0; width: 50px; float: left; }
     .block .my-groups ul li.last { margin: 0; }
   /* End 我加入的小组 */
+  /* 个人状态 */
+  .block .user-avatar img { width: 80px; height: 80px; }
+  .block .user-info { margin: 0 0 5px 15px; }
+    .block .user-info strong.name { color: #333; }
+    .block .user-info .status { line-height: 35px; }
+    .block .user-info ul { margin: 0; padding: 0; border: none; }
+      .block .user-info ul li { margin-right: 20px; float: left; color: #333; }
+        .block .user-info ul li a { text-decoration: none; color: #333; }
+        .block .user-info ul li a:hover { color: #08C; }
+        .block .user-info ul li strong { display: block; font-size: 14px; }
+  /* End 个人状态 */
 .footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; font-size: 12px; }
