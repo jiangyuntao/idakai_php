@@ -9,19 +9,19 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
 .navbar .btn { margin-top: 8px; }
 .block { margin: 20px 0 10px; overflow: hidden; }
   .block .title { overflow: hidden; margin-bottom: 15px; }
-    .block .title .r { float: right; font-family: Arial; line-height: 28px; }
+    .block .title .r { float: right; font-family: Arial; line-height: 20px; }
       .block .title .r a { margin-left: 10px; }
     .block .title h5 { margin: 0; padding-bottom: 5px; color: #3A3A3A; font-weight: normal; font-size: 15px; float: left; border-bottom: 2px solid #0088CC; font-weight: bold; }
       .block .title h5 a { text-decoration: none; color: #3A3A3A; }
       .block .title h5 i { margin-top: 3px; }
-    .block .title span.tag-name { margin-left: 20px; }
+    .block .title span.tag-name { margin-left: 20px; line-height: 20px; }
   .block .group-tag { font-size: 12px; }
     .block .group-tag ul { margin: 0; padding: 0 0 10px 0; }
       .block .group-tag ul li { margin: 5px 5px 5px 0; float: left; width: 70px; text-align: center; line-height: 25px; }
         .block .group-tag ul li a { display: block; }
         .block .group-tag ul li a.active, .block .group-tag ul li a:hover { background: #0088CC; color: #FFF; text-decoration: none; }
   .block ul { margin: 30px 0 10px 0; padding: 0; list-style: none; overflow: hidden; border-bottom: 1px solid #EEE; }
-    .block ul li.index-group div { padding-right: 10px; float: left; overflow: hidden; max-width: 220px; }
+    .block ul li.index-group div { padding-right: 10px; float: left; overflow: hidden; max-width: 270px; }
     .block ul li.index-group div.group-avatar { text-align: center; }
       .block ul li.index-group div.group-avatar img { width: 40px; height: 40px; }
     .block ul li.index-group div.group-info { margin-top: -1px; }
@@ -30,7 +30,7 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
       .block ul li.index-group div .muted { margin-left: 15px; font-size: 12px; }
   .block ul.nav-tabs { border: none; }
   /* 小组介绍 */
-  .block .group-instruction { margin: 0 0 20px 0; }
+  .block .group-instruction { margin: 0 0 20px 0; color: #666; }
   /* End 小组介绍 */
   /* 话题页标题 */
   .block .topic-title { overflow: hidden; }
@@ -55,8 +55,7 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
   .block .topic-list .description { color: #666; font-size: 12px; }
   /* End 话题列表 */
   .block blockquote div.status { float: left; width: 113px; }
-  .block blockquote a { margin: 0 10px; font-size: 12px; }
-  .block blockquote a.last { margin-right: 0; }
+  .block blockquote a { margin: 0 0 0 10px; font-size: 12px; }
   .block .search-form .q { width: 222px; }
   .block ul.sidebar-group-list { margin: 0; padding: 0; border: none; }
     .block ul.sidebar-group-list li { margin-bottom: 10px; }
@@ -69,18 +68,20 @@ label.error { margin-left: 10px; display: inline; color: #D70002; }
   /* 我加入的小组 */
   .block .my-groups img { width: 40px; height: 40px; }
   .block .my-groups ul { margin: 0; padding: 0; border: none; overflow: hidden; }
-    .block .my-groups ul li { margin: 0 12.5px 20px 0; width: 50px; float: left; }
+    .block .my-groups ul li { margin: 0 6.6px 20px 0; width: 50px; float: left; }
     .block .my-groups ul li.last { margin: 0; }
   /* End 我加入的小组 */
   /* 个人状态 */
-  .block .user-avatar img { width: 80px; height: 80px; }
-  .block .user-info { margin: 0 0 5px 15px; }
-    .block .user-info strong.name { color: #333; }
-    .block .user-info .status { line-height: 35px; }
-    .block .user-info ul { margin: 0; padding: 0; border: none; }
-      .block .user-info ul li { margin-right: 20px; float: left; color: #333; }
-        .block .user-info ul li a { text-decoration: none; color: #333; }
-        .block .user-info ul li a:hover { color: #08C; }
-        .block .user-info ul li strong { display: block; font-size: 14px; }
+  .block .user { overflow: hidden; }
+    .block .user-avatar img { width: 80px; height: 80px; }
+    .block .user-info { margin: 0 0 5px 15px; }
+      .block .user-info strong.name { color: #333; }
+      .block .user-info .status { margin-top: 10px; max-width: 115px; }
+  .block .user-data { margin-top: 10px; clear: both; }
+  .block .user-data ul { margin: 0; padding: 0; border: none; }
+    .block .user-data ul li { width: 54px; float: left; color: #333; }
+      .block .user-data ul li a { text-decoration: none; color: #333; }
+      .block .user-data ul li a:hover { color: #08C; }
+      .block .user-data ul li strong { display: block; font-size: 14px; }
   /* End 个人状态 */
 .footer { padding: 20px 0; margin-top: 20px; border-top: 1px solid #E5E5E5; background-color: whiteSmoke; font-size: 12px; }
